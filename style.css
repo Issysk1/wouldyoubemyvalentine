@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1dc, #ffb6c1);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+section {
+  padding: 80px 20px;
+}
+
+.hidden { display: none; }
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 16px 30px;
+  font-size: 20px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover { transform: scale(1.05); }
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: white;
+  color: #ff4d6d;
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* QUIZ */
+#answers button {
+  display: block;
+  margin: 12px auto;
+  width: 90%;
+  max-width: 420px;
+}
+
+.wrong {
+  background: #ff2e2e !important;
+  color: white;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  animation: float 6s linear infinite;
+  font-size: 24px;
+}
+
+/* BEES */
+.bee {
+  position: fixed;
+  font-size: 30px;
+  animation: buzz 6s ease-in-out infinite alternate;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card, .flip {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.35);
+}
+
+.selectable .card.selected {
+  background: #ff4d6d;
+}
+
+/* FLIP */
+.flip img {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.flip.flipped img { display: block; }
+
+iframe {
+  display: block;
+  margin: 20px auto 10px;
+  border-radius: 16px;
+}
+
+small {
+  opacity: 0.85;
+}
+
+/* ANIMATIONS */
+@keyframes float {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+@keyframes buzz {
+  from { transform: translate(0,0); }
+  to { transform: translate(200px,-120px); }
+}
+.hello {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sticker {
+  font-size: 48px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.correct {
+  background: #3ddc97 !important;
+  color: #0b3d2e;
+}
+section {
+  padding: 80px 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Default cursor everywhere */
+body {
+  cursor: default;
+}
+
+/* Worm cursor only for main content */
+#mainContent {
+  cursor: none;
+}
+
+/* WORM CURSOR */
+#worm {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  font-size: 30px;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+h1, h2 {
+  font-family: 'Pacifico', cursive;
+}
+
+body, p, button, small {
+  font-family: 'Poppins', sans-serif;
+}
+#hintButton {
+  margin-left: 10px;      /* next to the password button */
+  padding: 10px 20px;
+  background: #ff4d6d;    /* pink/red like your YES button */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#hintButton {
+  display: inline-block;       /* important so it’s visible */
+  margin-left: 10px;           /* space after submit button */
+  margin-top: 10px;            /* small gap below */
+  padding: 12px 25px;
+  background: #ff4d6d;         /* matches YES button */
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#hintButton:hover {
+  background: #ff6a8c;
+  transform: scale(1.05);
+}
